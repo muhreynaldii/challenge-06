@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Hero from "../../assets/images/img-mobil.png";
 import LogoBCR from "../../assets/images/logo-bcr.png";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ function Login() {
   const handleSubmit = async () => {
     try {
       if (!loginData.email || !loginData.password) {
-        console.log("Please fill all the fields!");
+        alert("Please fill all the fields!");
       }
       const res = await axios({
         method: "POST",
@@ -37,10 +37,10 @@ function Login() {
       }
     } catch (error) {
       if (error.response.status === 404) {
-        console.log("Login Failed!");
+        alert("Login Failed!");
       }
       if (error.response.status === 400) {
-        console.log("Login Failed! Wrong Password!");
+        alert("Login Failed! Wrong Password!");
       }
     }
   };
@@ -97,6 +97,12 @@ function Login() {
             {" "}
             Sign In
           </button>
+          <span>
+            Don't Have Account Yet?
+            <Link to="/register" className="mx-2 text-blue-500">
+              Register
+            </Link>
+          </span>
         </div>
       </div>
     </div>

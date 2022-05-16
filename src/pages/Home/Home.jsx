@@ -1,8 +1,14 @@
 import React from "react";
 import LogoBIRU from "../../assets/images/logo-biru.png";
 import Hero from "../../assets/images/img-car.png";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+  function handleLogout() {
+    localStorage.clear();
+    navigate("login", { replace: true });
+  }
   return (
     <>
       <div className="h-screen w-full bg-slate-200">
@@ -17,9 +23,12 @@ function Home() {
               <li>Testimonial</li>
               <li>FAQ</li>
             </ul>
-            <button className="mx-4 rounded bg-green-400 p-2 font-medium text-white">
+            <button
+              className="mx-4 rounded bg-red-600 p-2 font-medium text-white"
+              onClick={() => handleLogout()}
+            >
               {" "}
-              Register
+              Logout
             </button>
           </div>
         </div>

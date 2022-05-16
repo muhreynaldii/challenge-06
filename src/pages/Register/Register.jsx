@@ -24,15 +24,11 @@ function Register() {
       console.log(res.status);
 
       if (res.status === 201) {
-        setTimeout(() => {
-          console.log("Register Success!");
-        }, 2000);
+        alert("Register Success!");
         navigate("login");
       }
     } catch (error) {
-      setTimeout(() => {
-        console.log("Register Failed! Email Already Exist!");
-      }, 2000);
+      alert("Register Failed! Email Already Exist!");
     }
   };
   return (
@@ -88,7 +84,10 @@ function Register() {
             Sign Up
           </button>
           <span>
-            <Link to="/login">Already Have an Account?</Link>
+            Already Have an Account?
+            <Link to="/login" className="mx-2 text-blue-500">
+              Login
+            </Link>
           </span>
         </div>
       </div>

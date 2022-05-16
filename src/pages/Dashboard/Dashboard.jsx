@@ -24,23 +24,23 @@ function Dashboard() {
             <path
               d="M3 18H21"
               stroke="#151515"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M3 12H21"
               stroke="#151515"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
             <path
               d="M3 6H21"
               stroke="#151515"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
         </div>
@@ -56,7 +56,7 @@ function Dashboard() {
             Search
           </button>
           <img className="ml-8 mr-4" src={IconUser} alt="" />
-          <h1>Admin</h1>
+          <h1>{localStorage.getItem("role")}</h1>
           <img className="ml-2" src={IconDown} alt="" />
         </div>
       </div>
